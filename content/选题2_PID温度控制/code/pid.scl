@@ -1,0 +1,14 @@
+"温度值" := "温度输入" * 0.00361;
+"当前偏差" := "PID数据".设定值 - "温度值";
+"PID输出值" := "PID输出值" + "KP" * ("当前偏差" - "上次偏差") + "KI" * "当前偏差";   //PID算法
+"上次偏差" := "当前偏差";
+IF "PID输出值" > 100 THEN
+    // Statement section IF
+    "PID输出值" := 100;
+END_IF;
+IF "PID输出值" < 0 THEN
+    // Statement section IF
+    "PID输出值" := 0;
+END_IF;
+
+"PID整型字符" := REAL_TO_INT("PID输出值");

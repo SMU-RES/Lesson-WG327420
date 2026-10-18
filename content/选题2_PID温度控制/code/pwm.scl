@@ -1,0 +1,13 @@
+"PWM标志位" := "PWM标志位" + 1;
+IF "PWM标志位" >= 100 THEN
+    // Statement section IF
+    "PWM标志位" := 0;
+END_IF;
+
+IF "PWM标志位" >= "PID整型字符" THEN
+    // Statement section IF
+    "PWM输出" := 0;
+ELSE
+    "PWM输出" := 1;
+END_IF;
+
